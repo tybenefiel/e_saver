@@ -1,0 +1,18 @@
+<div class="page-header">
+  <h1>Welcome, <%= @user.name %></h1>
+</div>
+
+<h1>Tips</h1>
+<ul>
+<% @user.tips.each do |tip| %>
+<li><%= tip.title %> </li>
+<% end %>
+</ul>
+
+
+<h1>Todo Tips</h1>
+<ul>
+  <% @user.todo_tips.each do |todo| %>
+  <li><%= todo.title %></li>
+  <% end %>
+</ul>

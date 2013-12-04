@@ -1,0 +1,30 @@
+<div class="page-header">
+  <h1>Tasks</h1>
+</div>
+
+<p><%= link_to 'Add a New Task', new_task_url, class: 'btn btn-primary' %></p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Tip</th>
+      <th>To do list</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tasks.each do |task| %>
+      <tr>
+        <td><%= task.tip.title %></td>
+        <td><%= task.to_do_list.user.name %></td>
+        <td><%= link_to '<i class="fa fa-search-plus"></i>'.html_safe, task_url(task), class: 'btn btn-primary' %></td>
+        <td><%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_task_url(task), class: 'btn btn-warning' %></td>
+        <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, task_url(task), method: 'delete', data: { confirm: "Do you really want to delete this task?" }, class: 'btn btn-danger' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

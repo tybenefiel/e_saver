@@ -1,0 +1,18 @@
+<div class="page-header">
+  <h1>Editing To Do List #<%= @to_do_list.id %></h1>
+</div>
+
+<%= form_tag(to_do_list_url(@to_do_list), method: 'patch', class: 'form-horizontal') do %>
+  <div class="form-group">
+    <%= label_tag :user_id, nil, class: 'col-md-2 control-label' %>
+    <div class="col-md-6">
+      <%= select_tag :user_id, options_from_collection_for_select(User.all, :id, :name, @to_do_list.user_id), class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-md-offset-2 col-md-6">
+      <%= submit_tag "Update To Do List", class: 'btn btn-primary' %>
+    </div>
+  </div>
+<% end %>

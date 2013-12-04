@@ -1,0 +1,28 @@
+<div class="page-header">
+  <h1>To do lists</h1>
+</div>
+
+<p><%= link_to 'Add a New To Do List', new_to_do_list_url, class: 'btn btn-primary' %></p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>User</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @to_do_lists.each do |to_do_list| %>
+      <tr>
+        <td><%= to_do_list.user.name %></td>
+        <td><%= link_to '<i class="fa fa-search-plus"></i>'.html_safe, to_do_list_url(to_do_list), class: 'btn btn-primary' %></td>
+        <td><%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_to_do_list_url(to_do_list), class: 'btn btn-warning' %></td>
+        <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, to_do_list_url(to_do_list), method: 'delete', data: { confirm: "Do you really want to delete this to_do_list?" }, class: 'btn btn-danger' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
