@@ -42,6 +42,9 @@
         <% if user_signed_in? %>
           <li><%= link_to current_user.email, edit_user_registration_path %></li>
           <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+          <li><a href= "/tips">Create Tips</a></li>
+          <li><a href= "/tasks">Add Tips</a></li>
+          <li><a href="/to_do_lists/<%= current_user.id %>">My To Do List</a></li>
         <% else %>
           <li><%= link_to "Sign up", new_user_registration_path %></li>
           <li><%= link_to "Login", new_user_session_path %></li>
@@ -51,7 +54,7 @@
     </div><!-- /.navbar-collapse -->
   </nav>
 
-  
+
 
   <div class="container">
     <% if notice.present? %>

@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+
+
   def index
     @users = User.all
   end
@@ -17,7 +19,7 @@ class UsersController < ApplicationController
     @user.first_name = params[:first_name]
     @user.last_name = params[:last_name]
 
-    
+
 
       if @user.save
         redirect_to users_url, notice: "User created successfully."

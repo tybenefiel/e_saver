@@ -2,7 +2,7 @@ ESaver::Application.routes.draw do
   devise_for :users
   # Routes for the Task resource:
   # CREATE
-  root "tips#index"
+  root "users#index"
 
   get '/tasks/new', controller: 'tasks', action: 'new', as: 'new_task'
   post '/tasks', controller: 'tasks', action: 'create', as: 'tasks'

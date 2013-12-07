@@ -4,7 +4,7 @@ class ToDoList < ActiveRecord::Base
   has_many :tips, :through => :tasks
 
   def z
-    x = User.find(id)
+    x = User.find(5)
     return x.name
   end
 
