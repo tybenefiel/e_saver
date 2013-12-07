@@ -9,11 +9,12 @@ class TipsController < ApplicationController
   end
 
   def new
+    @tip = Tip.new
   end
 
   def create
     @tip = Tip.new
-    @tip.user_id = params[:user_id]
+    @tip.user_id = current_user.id
     @tip.title = params[:title]
     @tip.description = params[:description]
     @tip.room = params[:room]

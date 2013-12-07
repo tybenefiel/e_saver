@@ -2,6 +2,15 @@
   <h1>Editing To Do List #<%= @to_do_list.id %></h1>
 </div>
 
+<% if @to_do_list.errors.any? %>
+    <% @to_do_list.errors.full_messages.each do |message| %>
+        <div class="alert alert-dismissable alert-danger">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <%= message %>
+        </div>
+    <% end %>
+<% end %>
+
 <%= form_tag(to_do_list_url(@to_do_list), method: 'patch', class: 'form-horizontal') do %>
   <div class="form-group">
     <%= label_tag :user_id, nil, class: 'col-md-2 control-label' %>

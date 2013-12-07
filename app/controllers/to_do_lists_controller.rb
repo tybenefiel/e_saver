@@ -9,6 +9,7 @@ class ToDoListsController < ApplicationController
   end
 
   def new
+    @to_do_list = ToDoList.new
   end
 
   def create
