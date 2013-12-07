@@ -2,46 +2,49 @@
   <h1>New Tip</h1>
 </div>
 
+<% if @tip.errors.any? %>
+    <% @tip.errors.full_messages.each do |message| %>
+        <div class="alert alert-dismissable alert-danger">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <%= message %>
+        </div>
+    <% end %>
+<% end %>
+
 <%= form_tag(tips_url, method: 'post', class: 'form-horizontal') do %>
-  <div class="form-group">
-    <%= label_tag :user_id, nil, class: 'col-md-2 control-label' %>
-    <div class="col-md-6">
-      <%= select_tag :user_id, options_from_collection_for_select(User.all, :id, :name), class: 'form-control' %>
-    </div>
-  </div>
 
   <div class="form-group">
     <%= label_tag :title, nil, class: 'col-md-2 control-label' %>
     <div class="col-md-6">
-      <%= text_field_tag :title, nil, class: 'form-control' %>
+      <%= text_field_tag :title, @tip.title, class: 'form-control' %>
     </div>
   </div>
 
   <div class="form-group">
     <%= label_tag :description, nil, class: 'col-md-2 control-label' %>
     <div class="col-md-6">
-      <%= text_area_tag :description, nil, class: 'form-control' %>
+      <%= text_area_tag :description, @tip.description, class: 'form-control' %>
     </div>
   </div>
 
   <div class="form-group">
     <%= label_tag :room, nil, class: 'col-md-2 control-label' %>
     <div class="col-md-6">
-      <%= text_field_tag :room, nil, class: 'form-control' %>
+      <%= text_field_tag :room, @tip.room, class: 'form-control' %>
     </div>
   </div>
 
   <div class="form-group">
     <%= label_tag :price, nil, class: 'col-md-2 control-label' %>
     <div class="col-md-6">
-      <%= number_field_tag :price, nil, class: 'form-control' %>
+      <%= number_field_tag :price, @tip.price, class: 'form-control' %>
     </div>
   </div>
 
   <div class="form-group">
     <%= label_tag :saving, nil, class: 'col-md-2 control-label' %>
     <div class="col-md-6">
-      <%= number_field_tag :saving, nil, class: 'form-control' %>
+      <%= number_field_tag :saving, @tip.saving, class: 'form-control' %>
     </div>
   </div>
 

@@ -1,4 +1,5 @@
 ESaver::Application.routes.draw do
+  devise_for :users
   # Routes for the Task resource:
   # CREATE
   root "tips#index"
