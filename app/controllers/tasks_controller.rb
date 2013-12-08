@@ -15,7 +15,7 @@ class TasksController < ApplicationController
   def create
     @task = Task.new
     @task.tip_id = params[:tip_id]
-    @task.to_do_list_id = params[:to_do_list_id]
+    @task.to_do_list_id = current_user.id
 
     if @task.save
       redirect_to tasks_url, notice: "Task created successfully."

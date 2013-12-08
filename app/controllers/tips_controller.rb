@@ -1,7 +1,7 @@
 class TipsController < ApplicationController
 
   def index
-    @tips = Tip.all
+    @tips = Tip.where(:user_id => current_user.id)
   end
 
   def show
