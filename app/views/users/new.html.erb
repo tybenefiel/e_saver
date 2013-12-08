@@ -15,14 +15,14 @@
   <div class="form-group">
     <%= label_tag :first_name, nil, class: 'col-md-2 control-label' %>
     <div class="col-md-6">
-      <%= text_field_tag :first_name, nil, class: 'form-control' %>
+      <%= text_field_tag :first_name, @user.first_name, class: 'form-control' %>
     </div>
   </div>
 
   <div class="form-group">
     <%= label_tag :last_name, nil, class: 'col-md-2 control-label' %>
     <div class="col-md-6">
-      <%= text_field_tag :last_name, nil, class: 'form-control' %>
+      <%= text_field_tag :last_name, @user.last_name, class: 'form-control' %>
     </div>
   </div>
 
