@@ -1,6 +1,15 @@
 <div class="page-header">
-  <h1>New Tip</h1>
+  <h1>Create a New Tip!</h1>
 </div>
+
+<h3>It's quick and easy! All you have to do is:
+<ul>
+<li>Describe your tip in the box below</li>
+<li>Answer a few questions to the best of your ability</li>
+<li>Submit your tip for the world to see</li>
+<li>Receive a point every time someone uses your tip</li>
+</ul>
+</h3>
 
 <% if @tip.errors.any? %>
     <% @tip.errors.full_messages.each do |message| %>

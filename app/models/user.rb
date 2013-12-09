@@ -16,9 +16,10 @@ class User < ActiveRecord::Base
     t.save
   end
 
-def this_user
-  this_user = current_user.id
-end
+
+  def this_user
+    this_user = current_user.user_id
+  end
 
   def name
     return"#{first_name} #{last_name}"

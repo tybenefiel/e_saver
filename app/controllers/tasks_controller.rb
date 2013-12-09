@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
 
   def index
-    @tasks = Task.all
+    @tasks = Task.where(:to_do_list_id => current_user.id)
   end
 
   def show
