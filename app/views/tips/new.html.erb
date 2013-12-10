@@ -7,7 +7,8 @@
   <h3>It's quick and easy! All you have to do is:
   <ul>
   <li>Describe your tip in the box below</li>
-  <li>Answer a few questions to the best of your ability</li>
+  <li>Rate your tip's price on a 0-5 scale</li>
+  <li>Rate your tip's savings on a 0-5 scale</li>
   <li>Submit your tip for the world to see</li>
   <li>Receive a point every time someone uses your tip</li>
   </ul>
@@ -56,6 +57,7 @@
       <%= label_tag :saving, nil, class: 'col-md-2 control-label' %>
       <div class="col-md-6">
         <%= number_field_tag :saving, @tip.saving, class: 'form-control' %>
+
       </div>
     </div>
 
