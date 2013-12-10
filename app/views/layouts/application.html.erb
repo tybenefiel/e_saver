@@ -10,9 +10,62 @@
 
   <style>
     /* Only necessary if you are using navbar-fixed-top */
-    body {
-      padding-top: 50px;
+    #logo {
+      font-family: 'Playball', serif;
+      font-size: 40px;
+      /*color: #FFFFFF;*/
     }
+
+    .vinayak-box{
+      padding: 7px;
+      margin-bottom: 20px;
+      border: 1px solid #cccccc;
+      border-radius: 4px;
+      background-color: #f8f8f8;
+    }
+
+    #green-box{
+      background-color: #A8D800;  
+    }
+
+    #red-box{
+      background-color: #E44444;
+      color: #FFFFFF;
+      border-radius: 8px;
+    }
+
+    #white-box{
+      margin-top:75px;
+      background-color: #FFFFFF;
+      border-radius: 8px;
+      border: 1px solid #cccccc;  
+    }
+
+    #grey{
+      background-color: #f8f8f8;
+    }
+
+    #right{
+      float: right;
+    }
+
+    #tabs-position{
+      margin-top:16px;
+    }
+
+    #white-footer{
+      background-color: #FFFFFF;
+      height:40px;
+      margin-top:5px;
+      margin: 0 auto -20px;
+    }
+
+
+    body {
+      background-color: #A8D800;
+      padding-top: 40px;
+    }
+
   </style>
 
   <%= stylesheet_link_tag    "application", :media => "all" %>
@@ -26,7 +79,7 @@
 <body>
   <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
+    <div class="navbar-header" id="logo">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
@@ -73,6 +126,9 @@
 
     <%= yield %>
   </div>
+
+  <br>
+
 
 
 
