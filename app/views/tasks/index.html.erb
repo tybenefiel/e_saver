@@ -23,8 +23,7 @@
       <th>Tip</th>
       <!-- <th>To do list</th> -->
       <th></th>
-      <th></th>
-      <th></th>
+
     </tr>
   </thead>
 
@@ -32,9 +31,7 @@
     <% @tasks.each do |task| %>
       <tr>
         <td><%= task.tip.title %></td>
-        <!-- <td><%= task.to_do_list.user.name %></td> -->
-        <td><%= link_to '<i class="fa fa-search-plus"></i>'.html_safe, task_url(task), class: 'btn btn-primary' %></td>
-        <td><%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_task_url(task), class: 'btn btn-warning' %></td>
+
         <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, task_url(task), method: 'delete', data: { confirm: "Do you really want to delete this task?" }, class: 'btn btn-danger' %></td>
       </tr>
     <% end %>
